@@ -189,7 +189,7 @@ inquirer
 
                 // install the database driver and dependencies
                 const databaseDriver = database.split(' - Driver: ').pop() as string;
-                const command = `cd ${projectName} && ${pm} ${pm === Pm.npm ? 'install' : 'add'} ${databaseDriver} ${drizzleOrm} ${drizzleKit} && ${pm} install`;
+                const command = `cd ${projectName} && ${pm} ${pm === Pm.npm ? 'install' : 'add'} ${databaseDriver} ${drizzleOrm} ${drizzleKit} @types/${databaseDriver} && ${pm} install`;
 
                 execSync(command, { stdio: 'inherit' });
 
